@@ -17,12 +17,12 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
-#gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'    # Use Redis adapter to run Action Cable in production
 # gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'config' # Easiest way to add multi-environment yaml settings to Rails, Sinatra, Pandrino and other Ruby projects.
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
