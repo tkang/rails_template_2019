@@ -40,6 +40,8 @@ group :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'fakeredis'
   gem 'rails-controller-testing' # controller testing
+  gem 'forgery' # Easy and customizable generation of forged data - used to generate test sample data
+  gem 'timecop' # gem providing "time travel", "time freezing", and "time acceleration" capabilities, making it simple to test time-dependent code.
 end
 
 group :development do
