@@ -31,11 +31,11 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.7'
-  gem 'pry'
-  gem 'flog'
-  gem 'flay'
-  gem 'factory_bot_rails'
-  gem 'rails-controller-testing'
+  gem 'pry'  # alternative to the standard IRB shell for Ruby. Helps you to set breakpoint and go through code
+  gem 'flog' # Flog reports the most tortured code in an easy to read pain report. The higher the score, the more pain the code is in.
+  gem 'flay' # Flay analyzes code for structural similarities.
+  gem 'factory_bot_rails' # Fixture replacement with many more features
+  gem 'rails-controller-testing' # controller testing
 end
 
 group :development do
