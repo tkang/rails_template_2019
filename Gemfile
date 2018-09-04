@@ -17,7 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
-# gem 'redis', '~> 4.0'    # Use Redis adapter to run Action Cable in production
+gem 'redis', '~> 4.0'    # Use Redis adapter to run Action Cable in production
 # gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -28,13 +28,17 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
-  gem 'rspec-rails', '~> 3.7'
   gem 'pry'  # alternative to the standard IRB shell for Ruby. Helps you to set breakpoint and go through code
   gem 'flog' # Flog reports the most tortured code in an easy to read pain report. The higher the score, the more pain the code is in.
   gem 'flay' # Flay analyzes code for structural similarities.
   gem 'factory_bot_rails' # Fixture replacement with many more features
+end
+
+group :test do
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.7'
+  gem 'fakeredis'
   gem 'rails-controller-testing' # controller testing
 end
 
