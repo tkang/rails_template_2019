@@ -23,6 +23,7 @@ gem 'redis', '~> 4.0'    # Use Redis adapter to run Action Cable in production
 # gem 'capistrano-rails', group: :development
 
 gem 'config' # Easiest way to add multi-environment yaml settings to Rails, Sinatra, Pandrino and other Ruby projects.
+gem "lograge" # An attempt to tame Rails' default policy to log everything.
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
