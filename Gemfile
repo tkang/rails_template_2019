@@ -27,6 +27,7 @@ gem "lograge"             # An attempt to tame Rails' default policy to log ever
 gem 'active_model_serializers' # JSON serialization
 gem 'devise'              # Flexible authentication solution for Rails with Warden.
 gem 'cancancan', '~> 2.0' # The authorization Gem for Ruby on Rails.
+gem "rolify"              # Role management library with resource scoping
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
