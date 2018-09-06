@@ -30,6 +30,7 @@ gem 'cancancan', '~> 2.0' # The authorization Gem for Ruby on Rails.
 gem "rolify"              # Role management library with resource scoping
 gem 'whenever'            # Cron jobs in Ruby
 gem 'rack-cors', require: 'rack/cors' # Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which makes cross-origin AJAX possible.
+gem 'sidekiq'							# Simple, efficient background processing for Ruby
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -51,6 +52,7 @@ group :test do
   gem 'forgery' # Easy and customizable generation of forged data - used to generate test sample data
   gem 'timecop' # gem providing "time travel", "time freezing", and "time acceleration" capabilities, making it simple to test time-dependent code.
   gem 'shoulda-matchers', '~> 3.1' # Collection of testing matchers extracted from Shoulda
+	gem 'rspec-sidekiq' # RSpec for Sidekiq
 end
 
 group :development do
