@@ -22,10 +22,11 @@ gem 'redis', '~> 4.0'    # Use Redis adapter to run Action Cable in production
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'config' # Easiest way to add multi-environment yaml settings to Rails, Sinatra, Pandrino and other Ruby projects.
-gem "lograge" # An attempt to tame Rails' default policy to log everything.
+gem 'config'              # Easiest way to add multi-environment yaml settings to Rails, Sinatra, Pandrino and other Ruby projects.
+gem "lograge"             # An attempt to tame Rails' default policy to log everything.
 gem 'active_model_serializers' # JSON serialization
-gem 'devise' # Flexible authentication solution for Rails with Warden.
+gem 'devise'              # Flexible authentication solution for Rails with Warden.
+gem 'cancancan', '~> 2.0' # The authorization Gem for Ruby on Rails.
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
