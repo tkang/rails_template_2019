@@ -20,5 +20,14 @@ module RailsTemplate
       g.helper false
       g.test_framework :rspec
     end
+
+    # rack-cors setup
+    # Following lines will allow GET, POST or OPTIONS requests from any origin on any resource.
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: [:get, :post, :options]
+      end
+    end
   end
 end

@@ -29,6 +29,7 @@ gem 'devise'              # Flexible authentication solution for Rails with Ward
 gem 'cancancan', '~> 2.0' # The authorization Gem for Ruby on Rails.
 gem "rolify"              # Role management library with resource scoping
 gem 'whenever'            # Cron jobs in Ruby
+gem 'rack-cors', require: 'rack/cors' # Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which makes cross-origin AJAX possible.
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
