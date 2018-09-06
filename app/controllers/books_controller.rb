@@ -2,7 +2,7 @@ class BooksController < ApplicationController
 	authorize_resource
 
 	def create
-		@book = Book.new(book_params)
+		@book = Book.new(book_params.merge!(user_id: current_user.id))
 		@book.save!
 		render :show
 	end

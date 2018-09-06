@@ -49,7 +49,7 @@ group :test do
   gem 'rails-controller-testing' # controller testing
   gem 'forgery' # Easy and customizable generation of forged data - used to generate test sample data
   gem 'timecop' # gem providing "time travel", "time freezing", and "time acceleration" capabilities, making it simple to test time-dependent code.
-  gem 'shoulda-matchers', '~> 3.1'
+  gem 'shoulda-matchers', '~> 3.1' # Collection of testing matchers extracted from Shoulda
 end
 
 group :development do
