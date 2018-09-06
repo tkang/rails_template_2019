@@ -27,6 +27,11 @@ RSpec.describe BooksController, "GET #index" do
       expect(subject.status).to be(200)
       expect(subject).to render_template(:index)
     end
+
+    it do
+      subject
+      expect(assigns(:books)).to eq(Book.all)
+    end
   end
 
   context "if not logged in" do
@@ -43,6 +48,11 @@ RSpec.describe BooksController, "GET #show" do
     before { sign_in(user) }
 
     it_behaves_like "should render show page"
+
+    it do
+      subject
+      expect(assigns(:book)).to eq(Book.last)
+    end
   end
 
   context "if not logged in" do
