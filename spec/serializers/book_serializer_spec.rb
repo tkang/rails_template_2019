@@ -9,6 +9,7 @@ describe BookSerializer do
       id: book.id,
       title: book.title,
       isbn: book.isbn,
+      user: UserSerializer.new(book.user).as_json,
     )
   end
 end
