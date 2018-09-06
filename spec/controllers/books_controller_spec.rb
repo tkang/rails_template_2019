@@ -44,4 +44,37 @@ RSpec.describe BooksController, "GET #show" do
   end
 end
 
+RSpec.describe BooksController, "POST #create" do
+  let(:user) { FactoryBot.create(:user) }
+  let(:admin_user) { FactoryBot.create(:admin_user) }
+
+  subject { post :create, params: { book: { title: 'book1' } } }
+
+  context "if logged in with normal user" do
+    before { sign_in(user) }
+
+    it do
+      expect(subject.status).to be(302)
+      expect(subject).to redirect_to(root_url)
+    end
+  end
+
+  context "if logged in with admin user" do
+    before { sign_in(admin_user) }
+
+    it 'should be able to create a book' do
+      expect(subject).to render_template(:show)
+      expect(subject.status).to be(200)
+			expect(assigns(:book)).to eq(Book.last)
+    end
+  end
+
+  context "if not logged in" do
+    it "should redirect to login page" do
+      expect(subject.status).to be(302)
+      expect(subject).to redirect_to(new_user_session_path)
+    end
+  end
+end
+
 
