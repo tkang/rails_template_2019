@@ -1,5 +1,20 @@
 require 'rails_helper'
 
+RSpec.shared_examples "should redirect to login page" do
+  it { expect(subject.status).to be(302) }
+  it { expect(subject).to redirect_to(new_user_session_path) }
+end
+
+RSpec.shared_examples "should redirect to root page" do
+  it { expect(subject.status).to be(302) }
+  it { expect(subject).to redirect_to(root_path) }
+end
+
+RSpec.shared_examples "should render show page" do
+  it { expect(subject.status).to be(200) }
+  it { expect(subject).to render_template(:show) }
+end
+
 RSpec.describe BooksController, "GET #index" do
   let(:user) { FactoryBot.create(:user) }
   let!(:book) { FactoryBot.create(:book) }
@@ -15,10 +30,7 @@ RSpec.describe BooksController, "GET #index" do
   end
 
   context "if not logged in" do
-    it "should redirect to login page" do
-      expect(subject.status).to be(302)
-      expect(subject).to redirect_to(new_user_session_path)
-    end
+    it_behaves_like "should redirect to login page"
   end
 end
 
@@ -30,17 +42,11 @@ RSpec.describe BooksController, "GET #show" do
   context "if logged in" do
     before { sign_in(user) }
 
-    it do
-      expect(subject.status).to be(200)
-      expect(subject).to render_template(:show)
-    end
+    it_behaves_like "should render show page"
   end
 
   context "if not logged in" do
-    it "should redirect to login page" do
-      expect(subject.status).to be(302)
-      expect(subject).to redirect_to(new_user_session_path)
-    end
+    it_behaves_like "should redirect to login page"
   end
 end
 
@@ -53,27 +59,23 @@ RSpec.describe BooksController, "POST #create" do
   context "if logged in with normal user" do
     before { sign_in(user) }
 
-    it do
-      expect(subject.status).to be(302)
-      expect(subject).to redirect_to(root_url)
-    end
+    it_behaves_like "should redirect to root page"
   end
 
   context "if logged in with admin user" do
     before { sign_in(admin_user) }
 
-    it 'should be able to create a book' do
-      expect(subject).to render_template(:show)
-      expect(subject.status).to be(200)
-			expect(assigns(:book)).to eq(Book.last)
+    it_behaves_like "should render show page"
+
+    it 'creates a book' do
+      subject
+      expect(assigns(:book)).to eq(Book.last)
+      expect(Book.last.user).to eq(admin_user)
     end
   end
 
   context "if not logged in" do
-    it "should redirect to login page" do
-      expect(subject.status).to be(302)
-      expect(subject).to redirect_to(new_user_session_path)
-    end
+    it_behaves_like "should redirect to login page"
   end
 end
 
