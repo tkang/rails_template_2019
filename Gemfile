@@ -25,6 +25,7 @@ gem 'redis', '~> 4.0'    # Use Redis adapter to run Action Cable in production
 gem 'config' # Easiest way to add multi-environment yaml settings to Rails, Sinatra, Pandrino and other Ruby projects.
 gem "lograge" # An attempt to tame Rails' default policy to log everything.
 gem 'active_model_serializers' # JSON serialization
+gem 'devise' # Flexible authentication solution for Rails with Warden.
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
