@@ -79,4 +79,35 @@ RSpec.describe BooksController, "POST #create" do
   end
 end
 
+RSpec.describe BooksController, "DELETE #destroy" do
+  let(:user) { FactoryBot.create(:user) }
+  let(:admin_user) { FactoryBot.create(:admin_user) }
+  let!(:book) { FactoryBot.create(:book) }
+
+  subject { delete :destroy, params: { id: book.id } }
+
+  context "if logged in with normal user" do
+    before { sign_in(user) }
+
+    it_behaves_like "should redirect to root page"
+  end
+
+  context "if logged in with admin user" do
+    before { sign_in(admin_user) }
+
+    it { expect(subject.status).to be(302) }
+    it { expect(subject).to redirect_to(books_path) }
+
+    it 'deletes a book' do
+      subject
+      expect(assigns(:book)).to eq(book)
+      expect(Book.find_by(id: book.id)).to be_nil
+    end
+  end
+
+  context "if not logged in" do
+    it_behaves_like "should redirect to login page"
+  end
+end
+
 
