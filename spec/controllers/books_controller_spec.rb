@@ -51,7 +51,7 @@ RSpec.describe BooksController, "GET #show" do
 
     it do
       subject
-      expect(assigns(:book)).to eq(Book.last)
+      expect(assigns(:book)).to eq(book)
     end
   end
 
