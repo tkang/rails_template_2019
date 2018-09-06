@@ -37,6 +37,7 @@ group :development, :test do
   gem 'flog' # Flog reports the most tortured code in an easy to read pain report. The higher the score, the more pain the code is in.
   gem 'flay' # Flay analyzes code for structural similarities.
   gem 'factory_bot_rails' # Fixture replacement with many more features
+  gem 'rack-mini-profiler', require: false # Profiler for your development and production Ruby rack apps.
 end
 
 group :test do

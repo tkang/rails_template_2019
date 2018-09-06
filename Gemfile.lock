@@ -166,6 +166,8 @@ GEM
     public_suffix (3.0.3)
     puma (3.12.0)
     rack (2.0.5)
+    rack-mini-profiler (1.0.0)
+      rack (>= 1.2.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.1.6)
@@ -294,6 +296,7 @@ DEPENDENCIES
   lograge
   pry
   puma (~> 3.7)
+  rack-mini-profiler
   rails (~> 5.1.5)
   rails-controller-testing
   redis (~> 4.0)
@@ -309,4 +312,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.1
+   1.16.4
