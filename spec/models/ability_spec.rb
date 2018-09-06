@@ -13,6 +13,7 @@ describe User do
   context "for logged in user" do
     let(:user) { FactoryBot.create(:user) }
     it { should_not be_able_to(:manage, :all) }
+    it { should be_able_to(:read, Book) }
 
     context "for admin user" do
       let(:user) { FactoryBot.create(:admin_user) }

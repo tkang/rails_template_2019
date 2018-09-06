@@ -19,6 +19,7 @@ class Ability
   end
 
   def give_logged_in_user_permission(user)
+    can :read, Book
   end
 
   def give_admin_user_permission(user)
