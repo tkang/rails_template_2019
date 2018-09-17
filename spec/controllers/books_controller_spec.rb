@@ -1,25 +1,5 @@
 require 'rails_helper'
 
-RSpec.shared_examples "should redirect to login page" do
-	it { expect(subject.status).to be(302) }
-	it { expect(subject).to redirect_to(new_user_session_path) }
-end
-
-RSpec.shared_examples "should redirect to root page" do
-	it { expect(subject.status).to be(302) }
-	it { expect(subject).to redirect_to(root_path) }
-end
-
-RSpec.shared_examples "should render show page" do
-	it { expect(subject.status).to be(200) }
-	it { expect(subject).to render_template(:show) }
-end
-
-RSpec.shared_examples "render index page" do
-	it { expect(subject.status).to be(200) }
-	it { expect(subject).to render_template(:index) }
-end
-
 RSpec.describe BooksController, "GET #index" do
 	let(:user) { FactoryBot.create(:user) }
 	let!(:book) { FactoryBot.create(:book) }
@@ -28,7 +8,7 @@ RSpec.describe BooksController, "GET #index" do
 	context "if logged in" do
 		before { sign_in(user) }
 
-		it_behaves_like "render index page"
+		it_behaves_like "index page"
 
 		it do
 			subject
@@ -37,7 +17,7 @@ RSpec.describe BooksController, "GET #index" do
 	end
 
 	context "if not logged in" do
-		it_behaves_like "should redirect to login page"
+		it_behaves_like "login page redirection"
 	end
 end
 
@@ -49,7 +29,7 @@ RSpec.describe BooksController, "GET #show" do
 	context "if logged in" do
 		before { sign_in(user) }
 
-		it_behaves_like "should render show page"
+		it_behaves_like "show page"
 
 		it do
 			subject
@@ -58,7 +38,7 @@ RSpec.describe BooksController, "GET #show" do
 	end
 
 	context "if not logged in" do
-		it_behaves_like "should redirect to login page"
+		it_behaves_like "login page redirection"
 	end
 end
 
@@ -71,13 +51,13 @@ RSpec.describe BooksController, "POST #create" do
 	context "if logged in with normal user" do
 		before { sign_in(user) }
 
-		it_behaves_like "should redirect to root page"
+		it_behaves_like "root page redirection"
 	end
 
 	context "if logged in with admin user" do
 		before { sign_in(admin_user) }
 
-		it_behaves_like "should render show page"
+		it_behaves_like "show page"
 
 		it 'creates a book' do
 			subject
@@ -87,7 +67,7 @@ RSpec.describe BooksController, "POST #create" do
 	end
 
 	context "if not logged in" do
-		it_behaves_like "should redirect to login page"
+		it_behaves_like "login page redirection"
 	end
 end
 
@@ -101,7 +81,7 @@ RSpec.describe BooksController, "DELETE #destroy" do
 	context "if logged in with normal user" do
 		before { sign_in(user) }
 
-		it_behaves_like "should redirect to root page"
+		it_behaves_like "root page redirection"
 	end
 
 	context "if logged in with admin user" do
@@ -118,7 +98,7 @@ RSpec.describe BooksController, "DELETE #destroy" do
 	end
 
 	context "if not logged in" do
-		it_behaves_like "should redirect to login page"
+		it_behaves_like "login page redirection"
 	end
 end
 
