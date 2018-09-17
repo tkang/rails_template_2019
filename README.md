@@ -1,24 +1,33 @@
-# README
+# Rails Template 2018
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a template project to help you get started with a new Rails project with TDD.
 
-Things you may want to cover:
+For details on which gems are used, please refer to Gemfile.
 
-* Ruby version
+### Installation
 
-* System dependencies
+- rbenv + ruby-build is rocommended to manage ruby version (.ruby-version) and where gemfiles get installed (.ruby-gemset)
+- To install rbenv : https://github.com/rbenv/rbenv
+- To install ruby-build : https://github.com/rbenv/ruby-build
 
-* Configuration
+### Configuration
 
-* Database creation
+* Installing gemfiles
+```
+bundle install
+```
 
 * Database initialization
+```
+rake db:create
+rake db:migrate
+```
 
-* How to run the test suite
+* Running tests
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+rake db:test:prepare
+rspec spec
+```
 
-* Deployment instructions
 
-* ...
