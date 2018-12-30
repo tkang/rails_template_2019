@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   resources :books, only: [ :index, :show, :create, :destroy ]
 
 	namespace :api do
-		scope :v1 do
+		namespace :v1 do
 			mount_devise_token_auth_for 'User', at: 'auth'
-		end
+      resources :books, only: [ :index ]
+    end
 	end
 end
