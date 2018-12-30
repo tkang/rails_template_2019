@@ -1,9 +1,10 @@
 class User < ApplicationRecord
-  rolify
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  # Include default devise modules.
+  # :omniauthable, :confirmable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+    :recoverable, :rememberable, :trackable, :validatable
+  include DeviseTokenAuth::Concerns::User
+  rolify
 
   has_many :books
 end

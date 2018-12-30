@@ -26,6 +26,7 @@ gem 'config'              # Easiest way to add multi-environment yaml settings t
 gem "lograge"             # An attempt to tame Rails' default policy to log everything.
 gem 'active_model_serializers' # JSON serialization
 gem 'devise'              # Flexible authentication solution for Rails with Warden.
+gem 'devise_token_auth'
 gem 'cancancan', '~> 2.0' # The authorization Gem for Ruby on Rails.
 gem "rolify"              # Role management library with resource scoping
 gem 'whenever'            # Cron jobs in Ruby
