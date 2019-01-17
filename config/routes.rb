@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :books, only: [ :index, :show, :create, :destroy ]
+	resources :s3_signings, only: [ :index ]
 
 	namespace :api do
 		namespace :v1 do

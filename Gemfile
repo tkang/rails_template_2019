@@ -32,6 +32,7 @@ gem "rolify"              # Role management library with resource scoping
 gem 'whenever'            # Cron jobs in Ruby
 gem 'rack-cors', require: 'rack/cors' # Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which makes cross-origin AJAX possible.
 gem 'sidekiq'							# Simple, efficient background processing for Ruby
+gem 'fog-aws'             # to use AWS
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
