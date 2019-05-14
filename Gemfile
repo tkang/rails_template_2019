@@ -44,6 +44,7 @@ group :development, :test do
   gem 'flay' # Flay analyzes code for structural similarities.
   gem 'factory_bot_rails' # Fixture replacement with many more features
   gem 'rack-mini-profiler', require: false # Profiler for your development and production Ruby rack apps.
+  gem 'forgery' # Easy and customizable generation of forged data - used to generate test sample data
 end
 
 group :test do
@@ -52,7 +53,6 @@ group :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'fakeredis'
   gem 'rails-controller-testing' # controller testing
-  gem 'forgery' # Easy and customizable generation of forged data - used to generate test sample data
   gem 'timecop' # gem providing "time travel", "time freezing", and "time acceleration" capabilities, making it simple to test time-dependent code.
   gem 'shoulda-matchers', '~> 3.1' # Collection of testing matchers extracted from Shoulda
 	gem 'rspec-sidekiq' # RSpec for Sidekiq
