@@ -33,6 +33,7 @@ gem 'whenever'            # Cron jobs in Ruby
 gem 'rack-cors', require: 'rack/cors' # Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which makes cross-origin AJAX possible.
 gem 'sidekiq'							# Simple, efficient background processing for Ruby
 gem 'fog-aws'             # to use AWS
+gem 'graphql'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -55,6 +56,7 @@ group :test do
   gem 'timecop' # gem providing "time travel", "time freezing", and "time acceleration" capabilities, making it simple to test time-dependent code.
   gem 'shoulda-matchers', '~> 3.1' # Collection of testing matchers extracted from Shoulda
 	gem 'rspec-sidekiq' # RSpec for Sidekiq
+  gem 'rspec-graphql_matchers'
 end
 
 group :development do
@@ -65,7 +67,10 @@ group :development do
   #gem 'spring'
   #gem 'spring-watcher-listen', '~> 2.0.0'
 	gem 'rails-erd' # generate ERD (Entity-Relationship Diagrams)
+  gem "graphiql-rails"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'graphiql-rails', group: :development
