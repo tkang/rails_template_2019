@@ -1,6 +1,4 @@
 class S3SigningsController < ApplicationController
-  skip_before_action :authenticate_user!
-
   def index
     object_name = params[:objectName]
     key = "uploads/#{SecureRandom.uuid}_#{object_name}"

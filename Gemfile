@@ -45,6 +45,7 @@ group :development, :test do
   gem 'factory_bot_rails' # Fixture replacement with many more features
   gem 'rack-mini-profiler', require: false # Profiler for your development and production Ruby rack apps.
   gem 'forgery' # Easy and customizable generation of forged data - used to generate test sample data
+  gem "graphiql-rails"
 end
 
 group :test do
@@ -67,10 +68,8 @@ group :development do
   #gem 'spring'
   #gem 'spring-watcher-listen', '~> 2.0.0'
 	gem 'rails-erd' # generate ERD (Entity-Relationship Diagrams)
-  gem "graphiql-rails"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'graphiql-rails', group: :development

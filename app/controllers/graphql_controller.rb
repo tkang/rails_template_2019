@@ -1,5 +1,6 @@
 class GraphqlController < ApplicationController
-  skip_before_action :authenticate_user!
+  include DeviseTokenAuth::Concerns::SetUserByToken
+  before_action :authenticate_user!
 
   def execute
     variables = ensure_hash(params[:variables])
@@ -7,7 +8,7 @@ class GraphqlController < ApplicationController
     operation_name = params[:operationName]
     context = {
       # Query context goes here, for example:
-      # current_user: current_user,
+      current_user: current_user,
     }
     result = RailsTemplateSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
