@@ -6,7 +6,7 @@ For details on which gems are used, please refer to Gemfile.
 
 ### Installation
 
-- rbenv + ruby-build is rocommended to manage ruby version (.ruby-version) and where gemfiles get installed (.ruby-gemset)
+- rbenv + ruby-build is recommended to manage ruby version (.ruby-version) and where gemfiles get installed (.ruby-gemset)
 - To install rbenv : https://github.com/rbenv/rbenv
 - To install ruby-build : https://github.com/rbenv/ruby-build
 
