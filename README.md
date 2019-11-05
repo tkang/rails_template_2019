@@ -1,4 +1,4 @@
-# Rails Template 2018
+# Rails Template 2019
 
 This is a template project to help you get started with a new Rails project with TDD.
 
