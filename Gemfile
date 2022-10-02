@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '~> 2.7.5'
+ruby '~> 3.1.2'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
@@ -17,7 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'coffee-rails', '~> 5.0'
-gem 'redis', '~> 5.0' # Use Redis adapter to run Action Cable in production
+gem 'redis' #, '~> 5.0' # Use Redis adapter to run Action Cable in production
 gem 'turbolinks', '~> 5'
 # gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
 # Use Capistrano for deployment
