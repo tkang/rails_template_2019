@@ -35,6 +35,7 @@ gem 'rack-cors', require: 'rack/cors' # Rack Middleware for handling Cross-Origi
 gem 'rolify'              # Role management library with resource scoping
 gem 'sidekiq'             # Simple, efficient background processing for Ruby
 gem 'whenever'            # Cron jobs in Ruby
+gem 'net-smtp', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
