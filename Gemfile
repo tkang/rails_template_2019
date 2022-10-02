@@ -9,7 +9,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'puma', '~> 4.3.12'
-gem 'rails', '~> 5.2.8'
+gem 'rails', '~> 6.1'
 gem 'sass-rails', '~> 5.1'
 gem 'sqlite3'
 gem 'uglifier', '>= 1.3.0'
@@ -54,7 +54,7 @@ group :test do
   gem 'fakeredis'
   gem 'rails-controller-testing' # controller testing
   gem 'rspec-graphql_matchers'
-  gem 'rspec-rails', '~> 3.7'
+  gem 'rspec-rails' # , '~> 3.7'
   gem 'rspec-sidekiq' # RSpec for Sidekiq
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 3.1' # Collection of testing matchers extracted from Shoulda
