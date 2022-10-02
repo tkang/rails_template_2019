@@ -10,13 +10,11 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'puma', '~> 4.3.12'
 gem 'rails', '~> 6.1'
-gem 'sass-rails', '~> 5.1'
 gem 'sqlite3'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'coffee-rails', '~> 5.0'
 gem 'redis' #, '~> 5.0' # Use Redis adapter to run Action Cable in production
 gem 'turbolinks', '~> 5'
 # gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
