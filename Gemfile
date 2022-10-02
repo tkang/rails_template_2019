@@ -34,6 +34,7 @@ gem 'rolify'              # Role management library with resource scoping
 gem 'sidekiq'             # Simple, efficient background processing for Ruby
 gem 'whenever'            # Cron jobs in Ruby
 gem 'net-smtp', require: false
+gem 'graphiql-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -43,7 +44,6 @@ group :development, :test do
   gem 'flay' # Flay analyzes code for structural similarities.
   gem 'flog' # Flog reports the most tortured code in an easy to read pain report. The higher the score, the more pain the code is in.
   gem 'forgery' # Easy and customizable generation of forged data - used to generate test sample data
-  gem 'graphiql-rails'
   gem 'pry' # alternative to the standard IRB shell for Ruby. Helps you to set breakpoint and go through code
   gem 'rack-mini-profiler', require: false # Profiler for your development and production Ruby rack apps.
 end
