@@ -17,9 +17,9 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
-gem 'redis', '~> 4.0'    # Use Redis adapter to run Action Cable in production
+gem 'redis', '~> 5.0'    # Use Redis adapter to run Action Cable in production
 # gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -29,7 +29,7 @@ gem "lograge"             # An attempt to tame Rails' default policy to log ever
 gem 'active_model_serializers' # JSON serialization
 gem 'devise'              # Flexible authentication solution for Rails with Warden.
 gem 'devise_token_auth'
-gem 'cancancan', '~> 2.0' # The authorization Gem for Ruby on Rails.
+gem 'cancancan', '~> 3.0' # The authorization Gem for Ruby on Rails.
 gem "rolify"              # Role management library with resource scoping
 gem 'whenever'            # Cron jobs in Ruby
 gem 'rack-cors', require: 'rack/cors' # Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which makes cross-origin AJAX possible.
